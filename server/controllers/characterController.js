@@ -30,7 +30,7 @@ const upsertCharacter = (req, res) => {
     } else {
       res.status(200).send(doc);
     }
-  });)
+  });
 };
 
 const deleteCharacter = (req, res) => {
@@ -45,5 +45,8 @@ const deleteCharacter = (req, res) => {
 };
 
 module.exports = {
+  getCharacters,
   getCharacterById,
+  upsertCharacter,
+  deleteCharacter,
 };

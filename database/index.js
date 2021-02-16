@@ -111,7 +111,7 @@ const characterSchema = new mongoose.Schema({
   symbol: {
     name: {type: String, default: ''},
     image: {type: String, default: ''},
-  }
+  },
   treasure: {type: String, default: ''},
   spellcasting: {
     class: {type: String, default: ''},

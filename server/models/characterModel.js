@@ -34,7 +34,7 @@ const getCharacterByName = (name, cb) => {
 };
 
 const upsertCharacter = (characterInfo, cb) => {
-  db.Character.findOneAndUpdate({ _id === characterInfo._id },
+  db.Character.findOneAndUpdate({ _id: characterInfo._id },
     characterInfo,
     {
       upsert: true,
