@@ -53,8 +53,8 @@ const upsertCharacter = (characterInfo, cb) => {
   });
 };
 
-const deleteCharacter = (characterInfo, cb) => {
-  db.Character.findByIdAndDelete(characterInfo._id), ((err, doc) => {
+const deleteCharacter = (id, cb) => {
+  db.Character.findByIdAndDelete(id), ((err, doc) => {
     if (err) {
       console.log(err);
       cb(err);
@@ -65,5 +65,9 @@ const deleteCharacter = (characterInfo, cb) => {
 };
 
 module.exports = {
+  getCharacters,
   getCharacterById,
+  getCharacterByName,
+  upsertCharacter,
+  deleteCharacter,
 };
