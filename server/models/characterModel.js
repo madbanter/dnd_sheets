@@ -50,11 +50,11 @@ const upsertCharacter = (characterInfo, cb) => {
   db.Character.findOneAndUpdate({ _id: characterInfo._id },
     { $set: characterInfo },
     {
-      upsert: true,
+      // upsert: true,
       omitUndefined: true,
       returnOriginal: false,
       useFindAndModify: false,
-      setDefaultsOnInsert: true,
+      // setDefaultsOnInsert: true,
       overwrite: false
     },
     (err, doc) => {
@@ -62,6 +62,7 @@ const upsertCharacter = (characterInfo, cb) => {
       console.log(err);
       cb(err);
     } else {
+      console.log(doc);
       cb(null, doc);
     }
   });

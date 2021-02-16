@@ -27,7 +27,6 @@ const upsertCharacter = (req, res) => {
   let characterInfo = req.body;
   characterInfo._id = characterInfo._id || id;
   if(!characterInfo._id) {
-    console.log(req.body._id);
     models.createCharacter(characterInfo, (err, doc) => {
       if (err) {
         res.sendStatus(400);
@@ -36,6 +35,7 @@ const upsertCharacter = (req, res) => {
       }
     });
   } else {
+    console.log(req.body._id);
     models.upsertCharacter(characterInfo, (err, doc) => {
       if (err) {
         res.sendStatus(400);
@@ -44,6 +44,18 @@ const upsertCharacter = (req, res) => {
       }
     });
   };
+};
+
+const createCharacter = (req, res) => {
+  let characterInfo = req.body;
+  console.log(req.body._id);
+  models.createCharacter(characterInfo, (err, doc) => {
+    if (err) {
+      res.sendStatus(400);
+    } else {
+      res.status(201).send(doc);
+    }
+  });
 };
 
 const deleteCharacter = (req, res) => {
@@ -58,6 +70,7 @@ const deleteCharacter = (req, res) => {
 };
 
 module.exports = {
+  createCharacter,
   getCharacters,
   getCharacterById,
   upsertCharacter,
