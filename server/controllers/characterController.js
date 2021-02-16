@@ -23,14 +23,27 @@ const getCharacterById = (req, res) => {
 
 const upsertCharacter = (req, res) => {
   const { id } = req.params;
-  const characterInfo = req.body;
-  models.upsertCharacter(characterInfo, (err, doc) => {
-    if (err) {
-      res.sendStatus(400);
-    } else {
-      res.status(200).send(doc);
-    }
-  });
+  // console.log(req.body._id);
+  let characterInfo = req.body;
+  characterInfo._id = characterInfo._id || id;
+  if(!characterInfo._id) {
+    console.log(req.body._id);
+    models.createCharacter(characterInfo, (err, doc) => {
+      if (err) {
+        res.sendStatus(400);
+      } else {
+        res.status(201).send(doc);
+      }
+    });
+  } else {
+    models.upsertCharacter(characterInfo, (err, doc) => {
+      if (err) {
+        res.sendStatus(400);
+      } else {
+        res.status(200).send(doc);
+      }
+    });
+  };
 };
 
 const deleteCharacter = (req, res) => {

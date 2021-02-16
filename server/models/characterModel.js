@@ -33,15 +33,29 @@ const getCharacterByName = (name, cb) => {
   });
 };
 
+const createCharacter = (characterInfo, cb) => {
+  const newChar = new db.Character(characterInfo);
+  newChar.save(
+    (err, doc) => {
+    if (err) {
+      console.log(err);
+      cb(err);
+    } else {
+      cb(null, doc);
+    }
+  });
+};
+
 const upsertCharacter = (characterInfo, cb) => {
   db.Character.findOneAndUpdate({ _id: characterInfo._id },
-    characterInfo,
+    { $set: characterInfo },
     {
       upsert: true,
       omitUndefined: true,
       returnOriginal: false,
-      overwrite: true,
+      useFindAndModify: false,
       setDefaultsOnInsert: true,
+      overwrite: false
     },
     (err, doc) => {
     if (err) {
@@ -65,6 +79,7 @@ const deleteCharacter = (id, cb) => {
 };
 
 module.exports = {
+  createCharacter,
   getCharacters,
   getCharacterById,
   getCharacterByName,

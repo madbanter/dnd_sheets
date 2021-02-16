@@ -13,6 +13,7 @@ app.get('/api/characters', controllers.getCharacters);
 app.get('/api/characters/:id', controllers.getCharacterById);
 app.post('/api/characters', controllers.upsertCharacter);
 app.put('/api/characters/:id', controllers.upsertCharacter);
+app.patch('/api/characters/:id', controllers.upsertCharacter);
 app.delete('/api/characters/:id', controllers.deleteCharacter);
 
 app.listen(port, () => {

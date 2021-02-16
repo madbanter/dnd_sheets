@@ -7,7 +7,7 @@ mongoose.connect(connectionString, { useNewUrlParser: true, useUnifiedTopology: 
 const { connection } = mongoose;
 
 const characterSchema = new mongoose.Schema({
-  _id: mongoose.Schema.Types.ObjectId,
+  // _id: mongoose.Schema.Types.ObjectId,
   name: {type: String, required: true},
   classAndLevel: {type: String, default: ''},
   Background: {type: String, default: ''},
