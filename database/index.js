@@ -140,13 +140,8 @@ const characterSchema = new mongoose.Schema({
           prepared: Boolean,
         },
       ]
-    }
-  ]
-  location: {
-    city: String,
-    state: String,
-    country: String,
-  },
+    },
+  ],
 });
 
 const Character = mongoose.model('Character', characterSchema);
