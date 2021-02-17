@@ -1,0 +1,203 @@
+[
+  {
+      "attributes": {
+          "strength": {
+              "value": 16,
+              "mod": 3
+          },
+          "dexterity": {
+              "value": 10,
+              "mod": 0
+          },
+          "constitution": {
+              "value": 14,
+              "mod": 0
+          },
+          "intelligence": {
+              "value": 8,
+              "mod": 0
+          },
+          "wisdom": {
+              "value": 8,
+              "mod": 0
+          },
+          "charisma": {
+              "value": 14,
+              "mod": 0
+          }
+      },
+      "savingThrows": {
+          "strength": {
+              "value": 0,
+              "proficient": false
+          },
+          "dexterity": {
+              "value": 0,
+              "proficient": false
+          },
+          "constitution": {
+              "value": 0,
+              "proficient": false
+          },
+          "intelligence": {
+              "value": 0,
+              "proficient": false
+          },
+          "wisdom": {
+              "value": 0,
+              "proficient": false
+          },
+          "charisma": {
+              "value": 0,
+              "proficient": false
+          }
+      },
+      "skills": {
+          "acrobatics": {
+              "value": 0,
+              "proficient": false
+          },
+          "animalHandling": {
+              "value": 0,
+              "proficient": false
+          },
+          "arcana": {
+              "value": 0,
+              "proficient": false
+          },
+          "athletics": {
+              "value": 0,
+              "proficient": false
+          },
+          "deception": {
+              "value": 0,
+              "proficient": false
+          },
+          "history": {
+              "value": 0,
+              "proficient": false
+          },
+          "insight": {
+              "value": 0,
+              "proficient": false
+          },
+          "intimidation": {
+              "value": 0,
+              "proficient": false
+          },
+          "investigation": {
+              "value": 0,
+              "proficient": false
+          },
+          "medicine": {
+              "value": 0,
+              "proficient": false
+          },
+          "nature": {
+              "value": 0,
+              "proficient": false
+          },
+          "perception": {
+              "value": 0,
+              "proficient": false
+          },
+          "performance": {
+              "value": 0,
+              "proficient": false
+          },
+          "persuasion": {
+              "value": 0,
+              "proficient": false
+          },
+          "religion": {
+              "value": 0,
+              "proficient": false
+          },
+          "slightOfHand": {
+              "value": 0,
+              "proficient": false
+          },
+          "stealth": {
+              "value": 0,
+              "proficient": false
+          },
+          "survival": {
+              "value": 0,
+              "proficient": false
+          }
+      },
+      "hp": {
+          "current": 1,
+          "max": 1,
+          "temporary": 0
+      },
+      "hitDice": {
+          "current": "",
+          "total": ""
+      },
+      "deathSaves": {
+          "successes": 0,
+          "failures": 0
+      },
+      "gear": {
+          "money": {
+              "cp": 0,
+              "sp": 0,
+              "ep": 0,
+              "gp": 0,
+              "pp": 0
+          },
+          "equipment": ""
+      },
+      "appearance": {
+          "description": "",
+          "image": ""
+      },
+      "symbol": {
+          "name": "",
+          "image": ""
+      },
+      "spellcasting": {
+          "class": "",
+          "ability": "",
+          "saveDC": 10,
+          "attackBonus": 2
+      },
+      "classAndLevel": "Paladin 1",
+      "background": "Urchin",
+      "playerName": "Adam",
+      "race": "Elf",
+      "alignment": "CG",
+      "xp": 0,
+      "inspiration": "",
+      "proficiencyBonus": 2,
+      "otherProficiencesAndLanguages": "Common, Elvish",
+      "passivePerception": 0,
+      "passiveInvestigation": 0,
+      "passiveInsight": 0,
+      "armorClass": 10,
+      "initiative": 0,
+      "speed": 30,
+      "attackNotes": "",
+      "personalityTraits": "",
+      "ideals": "",
+      "bonds": "",
+      "flaws": "",
+      "featuresAndTraits": "",
+      "additionalFeaturesAndTraits": "",
+      "age": 21,
+      "height": "",
+      "weight": 0,
+      "eyes": "",
+      "skin": "",
+      "hair": "",
+      "alliesAndOrganizations": "",
+      "treasure": "",
+      "_id": "602c3b36a1e1ab5cb5f566d5",
+      "name": "Coriander",
+      "__v": 0,
+      "attacks": [],
+      "cantrips": [],
+      "spells": []
+  }
+]

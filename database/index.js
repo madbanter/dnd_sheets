@@ -10,7 +10,7 @@ const characterSchema = new mongoose.Schema({
   // _id: mongoose.Schema.Types.ObjectId,
   name: {type: String, required: true},
   classAndLevel: {type: String, default: ''},
-  Background: {type: String, default: ''},
+  background: {type: String, default: ''},
   playerName: {type: String, default: ''},
   race: {type: String, default: ''},
   alignment: {type: String, default: ''},
