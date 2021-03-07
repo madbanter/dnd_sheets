@@ -3,7 +3,6 @@ import ReactDOM from 'react-dom';
 import axios from 'axios';
 import styled from 'styled-components';
 import Sheet from './components/Sheet.jsx';
-import demo from './demo.json'
 
 const HomeGalleryDiv = styled.div`
   display: flex;
@@ -29,7 +28,6 @@ class App extends React.Component {
     super(props);
     this.state = {
       characters: [],
-      demo: demo,
       currentCharacter: null,
     };
 
@@ -74,8 +72,8 @@ class App extends React.Component {
   render() {
     return (
       <BackgroundDiv>
-        <Sheet character={this.state.demo[0]}
-        characters={this.state.demo}
+        <Sheet character={this.state.currentCharacter}
+        characters={this.state.characters}
         deleteCharacter={this.deleteCharacter}
         selectCharacter={this.selectCharacter}
         updateCharacter={this.updateCharacter}
