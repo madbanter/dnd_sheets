@@ -67,45 +67,52 @@ class Sheet extends React.Component {
     this.setState({
       [event.target.id]: event.target.value,
     });
-    console.log(this.state.name);
+    console.log(this.state[event.target.id]);
   }
 
   submitForm() {
-    this.props.updateCharacter(this.state);
+    let updateInfo = {_id: this.props.character._id || null }
+    for (key of this.state) {
+      updateInfo[key] = this.state[key];
+    }
+    this.props.updateCharacter(updateInfo, () => {});
   }
 
   render() {
+    if (!this.props.character) {
+      return ( <div></div> )
+    } else {
     return (
       <SheetDiv>
         <Banner src="./logo.svg"></Banner>
         <h2>Character</h2>
           <BioDiv>
             <label>Name: </label>
-            <SheetInput type="text" id="name" value={this.props.character.name} onChange={this.handleChange}></SheetInput>
+            <SheetInput type="text" id="name" value={this.state.name || this.props.character.name} onChange={this.handleChange}></SheetInput>
             <label>Class and Level: </label>
-            <SheetInput type="text" id="classAndLevel" value={this.props.character.classAndLevel} onChange={this.handleChange}></SheetInput>
+            <SheetInput type="text" id="classAndLevel" value={this.state.classAndLevel || this.props.character.classAndLevel} onChange={this.handleChange}></SheetInput>
             <label>Background: </label>
-            <SheetInput type="text" id="background" value={this.props.character.background} onChange={this.handleChange}></SheetInput>
+            <SheetInput type="text" id="background" value={this.state.background || this.props.character.background} onChange={this.handleChange}></SheetInput>
             <label>Player Name: </label>
-            <SheetInput type="text" id="playerName" value={this.props.character.playerName} onChange={this.handleChange}></SheetInput>
+            <SheetInput type="text" id="playerName" value={this.state.playerName || this.props.character.playerName} onChange={this.handleChange}></SheetInput>
             <label>Race: </label>
-            <SheetInput type="text" id="race" value={this.props.character.race} onChange={this.handleChange}></SheetInput>
+            <SheetInput type="text" id="race" value={this.state.race || this.props.character.race} onChange={this.handleChange}></SheetInput>
             <label>Alignment: </label>
-            <SheetInput type="text" id="alignment" value={this.props.character.alignment} onChange={this.handleChange}></SheetInput>
+            <SheetInput type="text" id="alignment" value={this.state.alignment || this.props.character.alignment} onChange={this.handleChange}></SheetInput>
           </BioDiv>
           <AttributesDiv>
             <label>Strength: </label>
-            <SheetInput type="text" id="strength" value={this.props.character.attributes.strength.value} onChange={this.handleChange}></SheetInput>
+            <SheetInput type="text" id="strength" value={this.state.strength || this.props.character.attributes.strength.value} onChange={this.handleChange}></SheetInput>
             <label>Dexterity: </label>
-            <SheetInput type="text" id="dexterity" value={this.props.character.attributes.dexterity.value} onChange={this.handleChange}></SheetInput>
+            <SheetInput type="text" id="dexterity" value={this.state.dexterity || this.props.character.attributes.dexterity.value} onChange={this.handleChange}></SheetInput>
             <label>Constitution: </label>
-            <SheetInput type="text" id="strength" value={this.props.character.attributes.constitution.value} onChange={this.handleChange}></SheetInput>
+            <SheetInput type="text" id="constitution" value={this.state.constitution || this.props.character.attributes.constitution.value} onChange={this.handleChange}></SheetInput>
             <label>Intelligence: </label>
-            <SheetInput type="text" id="intelligence" value={this.props.character.attributes.intelligence.value} onChange={this.handleChange}></SheetInput>
+            <SheetInput type="text" id="intelligence" value={this.state.intelligence || this.props.character.attributes.intelligence.value} onChange={this.handleChange}></SheetInput>
             <label>Wisdom: </label>
-            <SheetInput type="text" id="wisdom" value={this.props.character.attributes.wisdom.value} onChange={this.handleChange}></SheetInput>
+            <SheetInput type="text" id="wisdom" value={this.state.wisdom || this.props.character.attributes.wisdom.value} onChange={this.handleChange}></SheetInput>
             <label>Charisma: </label>
-            <SheetInput type="text" id="charisma" value={this.props.character.attributes.charisma.value} onChange={this.handleChange}></SheetInput>
+            <SheetInput type="text" id="charisma" value={this.state.charisma || this.props.character.attributes.charisma.value} onChange={this.handleChange}></SheetInput>
           </AttributesDiv>
           <ButtonBar>
             <DDButton onClick={this.submitForm}>Save</DDButton>
@@ -113,7 +120,7 @@ class Sheet extends React.Component {
             <DDButton onClick={this.selectCharacter}>Next</DDButton>
           </ButtonBar>
       </SheetDiv>
-    );
+    )};
   }
 }
 

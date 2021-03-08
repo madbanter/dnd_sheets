@@ -28,7 +28,6 @@ class App extends React.Component {
     super(props);
     this.state = {
       characters: [],
-      currentCharacter: null,
     };
 
     this.deleteCharacter = this.deleteCharacter.bind(this);
@@ -37,8 +36,7 @@ class App extends React.Component {
   }
 
   componentDidMount() {
-    this.getCharacters();
-    console.log(demo);
+    this.getCharacters(() => {});
   }
 
   getCharacters(callback) {
@@ -53,7 +51,7 @@ class App extends React.Component {
 
   updateCharacter(characterInfo, callback) {
     axios.put(`/api/characters/${characterInfo._id}`).then((response) => {
-      // this.setState({ characters: response.data });
+      this.setState({ characters: response.data });
       console.log(response.data);
       callback();
     });
